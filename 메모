@@ -1,1 +1,88 @@
 이원진 : 수정하시고 커밋해주세요.
+https://github.com/helfer2/user.git
+필기 40 실습 60
+
+#traffic manager
+aws external endpoint
+azure endpoint
+
+#
+availability set 구성 먼저하고 VMSS
+
+#apach 깔고 php 코드 에서 ip 수정
+
+#VPN 구성 : AWS 에서 mysql 볼때 
+
+#개인과제는 로드발란서에 VM 두개
+
+## 내 : 22번
+user22@gkn2019hotmail.onmicrosoft.com
+Furu1816
+
+## azure
+클라이언트 암호 
+3.0enE5c6bRQa+:Lv]Ae*7z/X9s+0Tkb
+
+구독 아이디
+e0fae348-f6c2-45f5-87b7-c41c22782d8f
+
+public ip 52.231.166.167
+
+#aws
+nat ip 필요없다
+
+<?php
+echo "Server IP Address : ";
+echo  $_SERVER['52.231.166.167'];
+echo "<br>";
+echo "ServerName : ";
+echo $_SERVER['jumpbox'];
+?>
+
+
+
+[ec2-user@ip-122-0-1-81 ~]$ vi user22-key.pem
+[ec2-user@ip-122-0-1-81 ~]$
+[ec2-user@ip-122-0-1-81 ~]$
+[ec2-user@ip-122-0-1-81 ~]$
+[ec2-user@ip-122-0-1-81 ~]$
+[ec2-user@ip-122-0-1-81 ~]$
+[ec2-user@ip-122-0-1-81 ~]$ ssh -i "user22-key.pem" ec2-user@122.0.1.15
+
+가상 게이트웨이를 만들어서 그거 두개를 사이트간 VPN 생성
+=> ppt
+
+
+drwxr-xr-x 2 root root  4096 Sep 24 06:54 ./
+drwxr-xr-x 3 root root  4096 Sep 24 06:31 ../
+-rw-r--r-- 1 root root 11321 Sep 24 06:31 index.html
+-rw-r--r-- 1 root root   134 Sep 24 06:54 index.php
+azureuser@jumpbox:/var/www/html$
+
+
+Include /var/www/html/index.php
+
+
+
+
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>MySql-PHP 연결 테스트</title>
+</head>
+<body>
+<?php
+echo "MySql 연결 테스트<br>";
+$db = mysqli_connect("22.0.1.12", "root", "Passw0rd", "test");
+if($db){
+	    echo "connect : 성공<br>";
+}
+else{
+    echo "disconnect : 실패<br>";
+}
+$result = mysqli_query($db, 'SELECT VERSION() as VERSION');
+$data = mysqli_fetch_assoc($result);
+echo $data['VERSION'];
+?>
+</body>
+</html>
